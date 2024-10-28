@@ -40,3 +40,16 @@ TEST(string_calculator_add,when_passed_a_single_number_returns_1_for_1){
   //ASSERT
   ASSERT_EQ(expectedValue,actualValue);
   }
+ 
+TEST(string_calculator_add,when_passed_two_comma_delimited_numbers){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input="1,7";
+  int expectedValue=8;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
