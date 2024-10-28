@@ -76,4 +76,58 @@ TEST(string_calculator_add,when_passed__newline_and_comma){
   //ASSERT
   ASSERT_EQ(expectedValue,actualValue);
   }
+TEST(string_calculator_add,when_passed_a_delimiter){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input="//;\n3;5";
+  int expectedValue=8;
 
+  //Act
+  int actualValue=objUnderTest.Add(input);
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
+TEST(string_calculator_add, when_passed_negative_numbers){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input="-5,-9";
+  int expectedValue="Negatives not allowed: -5,-9";
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
+TEST(string_calculator_add, when_passed_numbers_over_1000){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input=""87,1987501,13"";
+  int expectedValue="100";
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
+TEST(string_calculator_add,  when_passed_multicharacter_delimiter){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input="//7*5^^6//";
+  int expectedValue="18";
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
+TEST(string_calculator_add,  when_passed_multiple_delimiters){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input="//[*][%]\n4*2%3";
+  int expectedValue="9";
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
