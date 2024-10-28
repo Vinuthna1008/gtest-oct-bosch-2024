@@ -14,3 +14,16 @@ TEST(string_calculator_add,when_passed_a_single_number_returns_0_for_Empty){
   //ASSERT
   ASSERT_EQ(expectedValue,actualValue);
   }
+
+TEST(string_calculator_add,when_passed_a_single_number_returns_0_for_0){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input="0";
+  int expectedValue=0;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
