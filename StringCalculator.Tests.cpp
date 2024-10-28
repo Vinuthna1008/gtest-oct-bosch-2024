@@ -53,3 +53,27 @@ TEST(string_calculator_add,when_passed_two_comma_delimited_numbers){
   //ASSERT
   ASSERT_EQ(expectedValue,actualValue);
   }
+TEST(string_calculator_add,when_passed_multiple_comma_delimited_numbers){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input="1,4,3";
+  int expectedValue=8;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
+TEST(string_calculator_add,when_passed__newline_and_comma){
+  //Arrange
+  StringCalculator objUnderTest;
+  string input="1\n2,3";
+  int expectedValue=6;
+
+  //Act
+  int actualValue=objUnderTest.Add(input);
+  //ASSERT
+  ASSERT_EQ(expectedValue,actualValue);
+  }
+
