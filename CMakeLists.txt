@@ -25,6 +25,7 @@ target_link_libraries(
   unittestcode
   GTest::gmock_main
   gcov
+  StringCalculatorFixture.Tests.cpp
 )
 
 include(GoogleTest)
