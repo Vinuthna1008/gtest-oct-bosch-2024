@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.14)
 project(unittestcode)
-
+ 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+ 
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -13,20 +13,19 @@ FetchContent_Declare(
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
-
+ 
 enable_testing()
 add_compile_options("--coverage")
 add_executable(
   unittestcode
-  TestCases
- 
- )
+  StringCalculator.cpp
+  StringCalculatorFixture.Tests.cpp
+)
 target_link_libraries(
   unittestcode
   GTest::gmock_main
   gcov
-  StringCalculatorFixture.Tests.cpp
 )
-
+ 
 include(GoogleTest)
 gtest_discover_tests(unittestcode)
