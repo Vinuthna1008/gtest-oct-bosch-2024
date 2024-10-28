@@ -63,7 +63,7 @@ TEST(string_calculator_add,when_passed_multiple_comma_delimited_numbers){
   int actualValue=objUnderTest.Add(input);
 
   //ASSERT
-  ASSERT_EQ(expectedValue,actualValue);
+  EXPECT_EQ(expectedValue,actualValue);
   }
 TEST(string_calculator_add,when_passed__newline_and_comma){
   //Arrange
@@ -74,7 +74,7 @@ TEST(string_calculator_add,when_passed__newline_and_comma){
   //Act
   int actualValue=objUnderTest.Add(input);
   //ASSERT
-  ASSERT_EQ(expectedValue,actualValue);
+  EXPECT_EQ(expectedValue,actualValue);
   }
 TEST(string_calculator_add,when_passed_a_delimiter){
   //Arrange
@@ -85,7 +85,7 @@ TEST(string_calculator_add,when_passed_a_delimiter){
   //Act
   int actualValue=objUnderTest.Add(input);
   //ASSERT
-  ASSERT_EQ(expectedValue,actualValue);
+  EXPECT_EQ(expectedValue,actualValue);
   }
 TEST(string_calculator_add, when_passed_negative_numbers){
   //Arrange
@@ -96,7 +96,7 @@ TEST(string_calculator_add, when_passed_negative_numbers){
   //Act
   int actualValue=objUnderTest.Add(input);
   //ASSERT
-  ASSERT_EQ(expectedValue,actualValue);
+  EXPECT_EQ(expectedValue,actualValue);
   }
 TEST(string_calculator_add, when_passed_numbers_over_1000){
   //Arrange
@@ -107,7 +107,7 @@ TEST(string_calculator_add, when_passed_numbers_over_1000){
   //Act
   int actualValue=objUnderTest.Add(input);
   //ASSERT
-  ASSERT_EQ(expectedValue,actualValue);
+  EXPECT_EQ(expectedValue,actualValue);
   }
 TEST(string_calculator_add,  when_passed_multicharacter_delimiter){
   //Arrange
@@ -118,7 +118,7 @@ TEST(string_calculator_add,  when_passed_multicharacter_delimiter){
   //Act
   int actualValue=objUnderTest.Add(input);
   //ASSERT
-  ASSERT_EQ(expectedValue,actualValue);
+  EXPECT_EQ(expectedValue,actualValue);
   }
 TEST(string_calculator_add,  when_passed_multiple_delimiters){
   //Arrange
@@ -129,5 +129,5 @@ TEST(string_calculator_add,  when_passed_multiple_delimiters){
   //Act
   int actualValue=objUnderTest.Add(input);
   //ASSERT
-  ASSERT_EQ(expectedValue,actualValue);
+  EXPECT_EQ(expectedValue,actualValue);
   }
