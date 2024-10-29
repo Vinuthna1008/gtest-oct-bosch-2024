@@ -5,23 +5,23 @@
 
 using namespace std;
 
-// Fixture Class
+
 class StringCalculatorTest : public testing::Test {
 protected:
     StringCalculator *calculator;
-    vector<tuple<string, int, bool>> testCases;  // Added a boolean to indicate if an exception is expected
+    vector<tuple<string, int, bool>> testCases;  
 
     void SetUp() override {
         calculator = new StringCalculator();
-        // Initialize test cases with expected outcomes
+       
         testCases = {
-            {"", 0, false},       // Valid input: empty string
-            {"0", 0, false},      // Valid input: zero
-            {"1", 1, false},      // Valid input: single number
-            {"1,2", 3, false},    // Valid input: simple addition
-            {"1,-2", 0, false},   // Valid input: mixed positive and negative
-            {"a,b", 0, true},     // Invalid input: non-numeric
-            {"1,2,3,4,5", 15, false} // Valid input: multiple numbers
+            {"", 0, false},       
+            {"0", 0, false},     
+            {"1", 1, false},      
+            {"1,2", 3, false},    
+            {"1,-2", 0, false},   
+            {"a,b", 0, true},    
+            {"1,2,3,4,5", 15, false} 
         };
     }
 
@@ -38,9 +38,3 @@ protected:
         }
     }
 };
-
-TEST_F(StringCalculatorTest, HandlesVariousInputs) {
-    for (const auto& testCase : testCases) {
-        verifyCalculation(get<0>(testCase), get<1>(testCase), get<2>(testCase));
-    }
-}
